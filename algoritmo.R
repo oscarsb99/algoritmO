@@ -8,7 +8,6 @@ library(viridis)
 library(tseries)
 library(urca)
 library(forecast)
-#Prueba Publicis
 #Importar la base
 base <- read_excel("digitas.xlsx", sheet = "Base Punto 5", col_names = T)
 #Loop de prueba
@@ -38,13 +37,13 @@ base <- base %>% mutate(categoria = case_when(
 )
 
 #cuantos permanecen en otros
-print(paste("La categoria ´otros´ representa el",
+print(paste("La categoria ´Otros´ representa el",
             round((nrow(base %>% filter(categoria == "Otros"))/nrow(base))*100,2),"%"))
 #blanqueamiento
-print(paste("La categoria ´otros´ representa el",
+print(paste("La categoria ´Blanqueamiento´ representa el",
             round((nrow(base %>% filter(categoria == "Blanqueamiento"))/nrow(base))*100,2),"%"))
 #limpieza
-print(paste("La categoria ´otros´ representa el",
+print(paste("La categoria ´Limpieza´ representa el",
             round((nrow(base %>% filter(categoria == "Limpieza"))/nrow(base))*100,2),"%"))
 
 #plot
